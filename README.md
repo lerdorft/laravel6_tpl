@@ -6,7 +6,7 @@
 
 拉取项目代码到本地
 ```
-git clone git@code.doushen-int.com:eg3/laravel6_tpl.git
+git@github.com:lerdorft/laravel6_tpl.git
 ```
 
 如果本地没有安装composer，先安装composer。安装后到项目目录`double-teachers-saas-api`下，安装依赖组件。
@@ -25,6 +25,3 @@ cp .env.example .env
 ```
 php artisan key:generate
 ```
-
-
-# laravel6_tpl
