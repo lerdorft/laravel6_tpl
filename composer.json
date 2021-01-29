@@ -31,6 +31,12 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "hooks": {
+            "pre-commit": [
+                "echo committing as $(git config user.name)",
+                "composer run lint"
+            ]
         }
     },
     "autoload": {
@@ -62,6 +68,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "post-install-cmd": [
+            "./vendor/bin/cghooks update"
         ],
         "lint": "phpcs --standard=PSR1,PSR2, ./ruleset.xml app/ routes/ config/ ",
         "lint-fix": "phpcbf --standard=PSR1,PSR2 app/ routes/ config/ "
