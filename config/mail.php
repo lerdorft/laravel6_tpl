@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION'),
 
     /*
     |--------------------------------------------------------------------------
@@ -133,4 +133,13 @@ return [
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | System Error Receiver
+    |--------------------------------------------------------------------------
+    |
+    */
+    'error_receiver' => [
+        'chensonghua@doushen.com',
+    ],
 ];
