@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
@@ -40,7 +41,8 @@ abstract class Job implements ShouldQueue
 
         //邮件通知
         $errorReceiver = config('mail.error_receiver');
-        $messageContent = 'Job执行异常，请及时处理！' . PHP_EOL . PHP_EOL .
+        $env = App::environment() == 'production' ? '线上' : '测试';
+        $messageContent = '【' . $env . '】Job执行异常，请及时处理！' . PHP_EOL . PHP_EOL .
             '异常类: ' . $className . PHP_EOL .
             '异常信息: ' . $e->getMessage() . PHP_EOL .
             '异常信息链路: ' . PHP_EOL . $e->getTraceAsString();
