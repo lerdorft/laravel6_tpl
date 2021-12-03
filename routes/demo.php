@@ -16,4 +16,7 @@ use Illuminate\Http\Request;
 Route::group(['middleware' => ['demo']], function () {
     //demo
     Route::get('/test/index', 'IndexController@index');
+
+    //send email
+    Route::any('/email/send', 'IndexController@emailSend');
 });

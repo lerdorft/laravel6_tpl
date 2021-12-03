@@ -17,4 +17,15 @@ class DemoRepository extends BaseRepository
 
         return $this->response(['receive_id' => $id]);
     }
+
+    /**
+     * 发送邮件
+     *
+     * @param $params
+     * @return mixed
+     */
+    public function sendEmail($params)
+    {
+        return $this->response($params);
+    }
 }
