@@ -19,4 +19,10 @@ Route::group(['middleware' => ['demo']], function () {
 
     //send email
     Route::any('/email/send', 'IndexController@emailSend');
+
+    //json decode
+    Route::any('/common/json-decode', 'CommonController@jsonDecode');
+
+    //unserialize
+    Route::any('/common/unserialize', 'CommonController@unserialize');
 });
